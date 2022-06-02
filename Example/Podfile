@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'QRCode-Capture_Example' do
+  pod 'QRCode-Capture', :path => '../'
+
+  target 'QRCode-Capture_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
