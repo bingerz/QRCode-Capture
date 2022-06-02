@@ -1,5 +1,5 @@
 PODS:
-  - QRCode-Capture (0.2.0)
+  - QRCode-Capture (0.3.0)
 
 DEPENDENCIES:
   - QRCode-Capture (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  QRCode-Capture: 0d6c5d246390824022af8b30820110014bc0e232
+  QRCode-Capture: fde77080a5c514741ebc6586c96ef52950168a94
 
 PODFILE CHECKSUM: 132427aeec4e251432bf7daaa4911660154e867e
 

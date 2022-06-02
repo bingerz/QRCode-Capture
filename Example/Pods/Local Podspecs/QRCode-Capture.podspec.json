@@ -1,6 +1,6 @@
 {
   "name": "QRCode-Capture",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "summary": "An iOS ObjC version of QR code Scanner and Decoder widgets.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/bingerz/QRCode-Capture",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/bingerz/QRCode-Capture.git",
-    "tag": "0.2.0"
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "9.0"
