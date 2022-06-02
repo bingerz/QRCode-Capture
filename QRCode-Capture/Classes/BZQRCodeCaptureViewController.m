@@ -64,9 +64,9 @@ UIImagePickerControllerDelegate> {
                             object:nil
                              queue:nil
                         usingBlock:^(NSNotification *note) {
-                            [SELF.imagePicker dismissViewControllerAnimated:NO completion:NULL];
-                            [SELF cancel];
-                        }];
+        [SELF.imagePicker dismissViewControllerAnimated:NO completion:NULL];
+        [SELF cancel];
+    }];
     [_observers addObject:o];
 }
 
@@ -77,13 +77,20 @@ UIImagePickerControllerDelegate> {
     [_observers removeAllObjects];
 }
 
+- (UIImage *)imageFromLocalBundleWithName:(NSString *)imageName{
+    NSBundle *bundle = [NSBundle bundleForClass:[BZQRCodeCaptureViewController class]];
+    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+}
+
 - (id)initWithCompletion:(void (^)(BOOL, NSString *))completion{
     self = [super init];
     if (self) {
         _needsScanAnimation = YES;
         _completion = completion;
-        _frameImage = [UIImage imageNamed:@"img_animation_scan_pic" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
-        _lineImage = [UIImage imageNamed:@"img_animation_scan_line" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
+//        _frameImage = [UIImage imageNamed:@"img_animation_scan_pic" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
+//        _lineImage = [UIImage imageNamed:@"img_animation_scan_line" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
+        _frameImage = [self imageFromLocalBundleWithName: @"img_animation_scan_pic"];
+        _lineImage = [self imageFromLocalBundleWithName: @"img_animation_scan_line"];
         _leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
                                                               style:UIBarButtonItemStylePlain
                                                              target:self
@@ -260,6 +267,10 @@ UIImagePickerControllerDelegate> {
     [self stopReading];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 - (void)setScanViewLayerMask{
     // 原有实现，path和frame中的宽高参考值都是SCREEN_WIDTH和SCREEN_HEIGHT，新版本系统中会引起错位
     // 现将宽高参考值使用viewWillAppear后的width和height值，此宽高值是屏幕实际位置。
@@ -371,10 +382,6 @@ UIImagePickerControllerDelegate> {
         [_videoPreviewLayer removeFromSuperlayer];
         _isReading = !_isReading;
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
