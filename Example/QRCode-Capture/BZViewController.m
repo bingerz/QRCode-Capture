@@ -7,7 +7,7 @@
 //
 
 #import "BZViewController.h"
-#import "QRCode_Capture/QRCode-Capture.h"
+#import "QRCode_Capture/QRCode-Capture-umbrella.h"
 
 @interface BZViewController ()
 
