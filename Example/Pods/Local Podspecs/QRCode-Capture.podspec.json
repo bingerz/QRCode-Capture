@@ -1,0 +1,22 @@
+{
+  "name": "QRCode-Capture",
+  "version": "0.1.0",
+  "summary": "A short description of QRCode-Capture.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hanbing0604@aliyun.com/QRCode-Capture",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hanbing0604@aliyun.com": "hanbing0604@aliyun.com"
+  },
+  "source": {
+    "git": "https://github.com/hanbing0604@aliyun.com/QRCode-Capture.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "QRCode-Capture/Classes/**/*"
+}

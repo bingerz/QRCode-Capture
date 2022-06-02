@@ -7,6 +7,7 @@
 //
 
 #import "BZViewController.h"
+#import "QRCode_Capture/QRCode-Capture.h"
 
 @interface BZViewController ()
 
@@ -14,16 +15,25 @@
 
 @implementation BZViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [_label setText:@"Please tap Scan Start."];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (IBAction)scan:(id)sender {
+    BZQRCodeCaptureViewController *vc = [[BZQRCodeCaptureViewController alloc] initWithCompletion:^(BOOL succeeded, NSString *result) {
+        [_label setText:nil];
+        if (succeeded) {
+            [_label setText:result];
+        } else {
+            [_label setText:@"Scan failed, please try again."];
+        }
+    }];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:NULL];
+}
+
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

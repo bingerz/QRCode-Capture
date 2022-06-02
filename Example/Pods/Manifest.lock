@@ -1,0 +1,16 @@
+PODS:
+  - QRCode-Capture (0.1.0)
+
+DEPENDENCIES:
+  - QRCode-Capture (from `../`)
+
+EXTERNAL SOURCES:
+  QRCode-Capture:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  QRCode-Capture: 206464568329f90a2a41d81e07c1b4755ef31ac5
+
+PODFILE CHECKSUM: 132427aeec4e251432bf7daaa4911660154e867e
+
+COCOAPODS: 1.11.3
