@@ -87,8 +87,6 @@ UIImagePickerControllerDelegate> {
     if (self) {
         _needsScanAnimation = YES;
         _completion = completion;
-//        _frameImage = [UIImage imageNamed:@"img_animation_scan_pic" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
-//        _lineImage = [UIImage imageNamed:@"img_animation_scan_line" inBundle:[NSBundle bundleForClass:[BZQRCodeCaptureViewController class]] compatibleWithTraitCollection:nil];
         _frameImage = [self imageFromLocalBundleWithName: @"img_animation_scan_pic"];
         _lineImage = [self imageFromLocalBundleWithName: @"img_animation_scan_line"];
         _leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
