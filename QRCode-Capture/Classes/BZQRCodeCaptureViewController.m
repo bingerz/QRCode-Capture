@@ -77,9 +77,33 @@ UIImagePickerControllerDelegate> {
     [_observers removeAllObjects];
 }
 
-- (UIImage *)imageFromLocalBundleWithName:(NSString *)imageName{
+// 当Pod库未打包上传到远程仓库，本地Example运行调试时使用此方法
+- (UIImage *)getLocalBundleImageWithName:(NSString *)name{
     NSBundle *bundle = [NSBundle bundleForClass:[BZQRCodeCaptureViewController class]];
-    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+    return [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+}
+
+// Pod库上传到远程仓库后，图片会打包成*.bundle资源，引用Pod项目运行时使用此方法
+- (UIImage *)getFrameworkBundleImageWithName:(NSString *)name{
+    NSBundle *curBundle = [NSBundle bundleForClass:[self class]];   //获取当前所在的Bundle
+    NSDictionary *dic = curBundle.infoDictionary;
+    NSString *bundleName = dic[@"CFBundleExecutable"];  //获取BundleName
+    NSInteger scale = [[UIScreen mainScreen] scale];    //获取屏幕比例
+    //拼接图片名称，支持图片名字imageName@2x.png格式
+    //NSString *imageName = [NSString stringWithFormat:@"%@@%zdx", name, scale];
+    NSString *bundleNamePath = [NSString stringWithFormat:@"%@.bundle", bundleName];
+    //路径
+    NSString *bundlePath = [[curBundle resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", bundleNamePath]];
+    NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
+    return [UIImage imageNamed:name inBundle:resourceBundle compatibleWithTraitCollection:nil];
+}
+
+- (UIImage *)getImageWithName:(NSString *)name{
+    UIImage *image = [self getLocalBundleImageWithName:name];
+    if (!image) {
+        image = [self getFrameworkBundleImageWithName:name];
+    }
+    return image;
 }
 
 - (id)initWithCompletion:(void (^)(BOOL, NSString *))completion{
@@ -87,8 +111,8 @@ UIImagePickerControllerDelegate> {
     if (self) {
         _needsScanAnimation = YES;
         _completion = completion;
-        _frameImage = [self imageFromLocalBundleWithName: @"img_animation_scan_pic"];
-        _lineImage = [self imageFromLocalBundleWithName: @"img_animation_scan_line"];
+        _frameImage = [self getImageWithName: @"img_animation_scan_pic"];
+        _lineImage = [self getImageWithName: @"img_animation_scan_line"];
         _leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
                                                               style:UIBarButtonItemStylePlain
                                                              target:self

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QRCode-Capture'
-  s.version          = '0.4.0'
+  s.version          = '0.5.0'
   s.summary          = 'An iOS ObjC version of QR code Scanner and Decoder widgets.'
 
 # This description is used to generate tags and improve search results.
