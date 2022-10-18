@@ -70,7 +70,6 @@
 		B95EA4B115FA31ADD7D5CEBF6AACA437 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C2D4C9A6E4043577003A3ABBCAC8D02C /* Pods-QRCode-Capture_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QRCode-Capture_Example.modulemap"; sourceTree = "<group>"; };
 		CB74237F290289DDD8DE9C5EC3E5702C /* Pods-QRCode-Capture_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QRCode-Capture_Example-Info.plist"; sourceTree = "<group>"; };
-		CECA48F45D9426FC84D75379DB8016C9 /* ResourceBundle-QRCode-Capture-QRCode-Capture-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-QRCode-Capture-QRCode-Capture-Info.plist"; sourceTree = "<group>"; };
 		D0DEABCA759522CC69B2B25E25311371 /* QRCode-Capture.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "QRCode-Capture.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D9F466B0C218B90A49A7C0F9F68099C6 /* Pods-QRCode-Capture_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QRCode-Capture_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF8E39715C255702853FE38F3309A44 /* QRCode-Capture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "QRCode-Capture.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +133,6 @@
 				F49C0DAD79134786442344BF22B99A8E /* QRCode-Capture-umbrella.h */,
 				DAF8E39715C255702853FE38F3309A44 /* QRCode-Capture.debug.xcconfig */,
 				B08FCD9DA183594AB7D0399EBBB3688F /* QRCode-Capture.release.xcconfig */,
-				CECA48F45D9426FC84D75379DB8016C9 /* ResourceBundle-QRCode-Capture-QRCode-Capture-Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/QRCode-Capture";

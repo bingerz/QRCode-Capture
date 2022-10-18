@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QRCode-Capture'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'An iOS ObjC version of QR code Scanner and Decoder widgets.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  An iOS ObjC version of QR code Scanner and Decoder widgets.
                        DESC
 
   s.homepage         = 'https://github.com/bingerz/QRCode-Capture'
